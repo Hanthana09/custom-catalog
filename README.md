@@ -1,14 +1,14 @@
 # Case Study - Namal Dissanayake
 
-This module developed by Namal Dissanayake for Ajalan's case study.
+By Namal Dissanayake for Ajalan's case study.
 
 ## Installation
 - Create magento project
 ```sh
 composer create-project --repository=https://repo.magento.com/ magento/project-community-edition
 ```
-- Create a database, setup virtual hosts and setup RabbitMQ.
-- Navigate to codepool directory inside the cloned repository.
+- Create a DB, setup virtual hosts and setup RabbitMQ.
+- Navigate to project directory inside the cloned repository.
 - Install composer packages.
 ```sh
 composer install
@@ -25,11 +25,6 @@ php bin/magento setup:install --base-url=http://magento2.local/ --base-url-secur
 ```sh
 php bin/magento setup:upgrade
 ```
-- If you are on production mode run di compile and static content deploy as well.
-```sh
-php bin/magento setup:di:compile; php bin/magento setup:static-content:deploy -j 4
-```
-- You can visit the store now and start testing.
 
 ## Case 2 - CustomCatalog module
 As requested, custom module have been developed for install using composer package manager. Respository only containing the module have been submited to packagist.org. So you can use below command to install the package to your project.
@@ -41,17 +36,17 @@ composer require ajlan/module-custom-catalog
 #### Case 2.1.1
 It should add a "CustomCatalog" menu on PRODUCTS section 
 
-![Imgur](https://i.imgur.com/Ajlbila.png)
+![Imgur](https://i.imgur.com/YME6qlI.png)
 
 #### Case 2.1.2
 When we click on CustomCatalog link it should list all added products. And it should also have filtering options.
 
-![Imgur](https://i.imgur.com/cCVDupTl.png?2)
+![Imgur](https://i.imgur.com/JY1FCVC.png)
 
 #### Case 2.1.3
 We should be able to add/edit products.
 
-![Imgur](https://i.imgur.com/ullXSqjl.png)
+![Imgur](https://i.imgur.com/wHTa1fh.png)
 
 In the screenshots we have many fields. Just need to cover these fields. ProductID,SKU,CopyWriteInfo,VPN for this case.
 
@@ -80,13 +75,13 @@ Method: **PUT**
 
 Sample payload:
 
-**Note:** Since I have utilized Magento default product entity. Lets pass the payload as Magento's product entity. Which we could directly assigned for a Product object with the API call. So the payload here is bit different than the provided example.
+**Note:** The payload here is bit different than the provided example since I used Magento's product entity 
 
 ```json
 {
   "product": {
-    "sku": "simple-product-sku",
-    "name": "Simple Product Name",
+    "sku": "product-sku",
+    "name": "Product Name",
     "price": 99,
     "status": 1,
     "visibility": 4,
@@ -95,7 +90,7 @@ Sample payload:
     "custom_attributes": [
       {
         "attribute_code": "description",
-        "value": "Simple product description"
+        "value": "product description"
       },
       {
         "attribute_code": "tax_class_id",
