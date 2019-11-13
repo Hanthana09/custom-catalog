@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @package    Ajlan
+ * @author     Namal Dissanayake
+ * @copyright  2019 Namal Dissanayake
+ */
+-->
+<layout xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/layout_generic.xsd">
+    <update handle="formkey"/>
+    <container name="root" label="Root">
+        <block class="Ajlan\CustomCatalog\Block\Adminhtml\Product\Grid" name="custom.product.grid"/>
+    </container>
+</layout>

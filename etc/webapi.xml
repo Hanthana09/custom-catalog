@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @package    Ajlan
+ * @author     Namal Dissanayake
+ * @copyright  2019 Namal Dissanayake
+ */
+-->
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Webapi:etc/webapi.xsd">
+
+    <!-- Product Service -->
+    <route url="/V1/product/getByVPN/:VPN" method="GET">
+        <service class="Ajlan\CustomCatalog\Api\ProductManagerInterface" method="getByVPN"/>
+        <resources>
+            <resource ref="Ajlan_CustomCatalog::products" />
+        </resources>
+    </route>
+    <route url="/V1/product/update" method="PUT">
+        <service class="Ajlan\CustomCatalog\Api\ProductManagerInterface" method="update" />
+        <resources>
+            <resource ref="Ajlan_CustomCatalog::products" />
+        </resources>
+    </route>
+</routes>

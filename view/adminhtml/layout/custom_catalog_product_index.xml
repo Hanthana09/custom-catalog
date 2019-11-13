@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @package    Ajlan
+ * @author     Namal Dissanayake
+ * @copyright  2019 Namal Dissanayake
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <update handle="styles"/>
+    <body>
+        <referenceBlock name="menu">
+            <action method="setActive">
+                <argument name="itemId" xsi:type="string">Ajlan_CustomCatalog::products</argument>
+            </action>
+        </referenceBlock>
+        <referenceBlock name="page.title">
+            <action method="setTitleClass">
+                <argument name="class" xsi:type="string">complex</argument>
+            </action>
+        </referenceBlock>
+        <referenceContainer name="content">
+            <uiComponent name="custom_product_listing"/>
+            <block class="Ajlan\CustomCatalog\Block\Adminhtml\Product" name="custom_products_list"/>
+        </referenceContainer>
+    </body>
+</page>

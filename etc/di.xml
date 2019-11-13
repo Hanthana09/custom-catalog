@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @package    Ajlan
+ * @author     Namal Dissanayake
+ * @copyright  2019 Namal Dissanayake
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Ajlan\CustomCatalog\Api\ProductManagerInterface" type="Ajlan\CustomCatalog\Model\ProductManager" />
+</config>
